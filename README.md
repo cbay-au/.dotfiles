@@ -1,3 +1,10 @@
+to install your dotfiles onto a new system: NEEDS EDITING
+
+$ cd $HOME
+$ git clone git@github.com:username/dotfiles.git .dotfiles
+$ ./.dotfiles/bin/dfm install # creates symlinks to install files
+======================================
+
 # Awesome dotfiles
 
 A curated list of dotfiles resources. Inspired by the [awesome](https://github.com/sindresorhus/awesome) list thing.
