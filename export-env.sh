@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# Ref:- https://stackoverflow.com/questions/19331497/set-environment-variables-from-file-of-key-value-pairs
 ## Usage:
 ##   . ./export-env.sh ; $COMMAND
 ##   . ./export-env.sh ; echo ${MINIENTREGA_FECHALIMITE}
