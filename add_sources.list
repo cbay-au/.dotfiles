@@ -1,5 +1,5 @@
 # add to /etc/apt/sources.list.d/additional.list
-# wget 
+# wget https://raw.githubusercontent.com/leighton-0/.dotfiles/main/add_sources.list
 
 deb http://deb.debian.org/debian/ bookworm contrib main non-free non-free-firmware
 # deb-src http://deb.debian.org/debian/ bookworm contrib main non-free non-free-firmware
