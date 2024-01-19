@@ -107,7 +107,7 @@
 # List commands
     alias l="ls"
     alias l='ls -lAh'
-    alias ls="ls -la"
+    alias ls="ls --color -F"
     alias la="ls -a"
     alias ll="ls -al"
 
