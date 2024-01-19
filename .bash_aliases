@@ -3,6 +3,7 @@
 ##                      MY ALIASES                             ##
 #################################################################
 
+# To print alias without executing use \
 # Miscelanious
 
     alias sdn='shutdown now'
