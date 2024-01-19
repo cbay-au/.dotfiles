@@ -53,6 +53,9 @@
     alias do3='ssh root@134.122.111.227'
     alias do4='ssh root@134.122.111.227'
 
+# docker
+    alias df='docker-compose'
+
 # VPN
     alias vpns='nordvpn status'
     alias vpnset='nordvpn settings'
