@@ -10,13 +10,9 @@
     alias v1='grep VERSION /etc/os-release'
     alias v2='uname -a'
     alias upd='sudo apt update && sudo apt -y full-upgrade'
-    alias baz='gedit .shell_aliases'
-    alias bcz='gedit .zshrc'
-    alias ba='gedit .bash_aliases'             #used on bash not zsh
-    alias bf='gedit ~/zz_functions/functions_1.sh
-    alias bc='gedit .bashrc'                   #used on bash not zsh
-    alias rep='gedit ~/zz_reports'
-    alias fun='gedit ~/zz_functions/functions_1'
+    alias ba='nano .bash_aliases'             #used on bash not zsh
+    alias bf='nano ~/zz_functions/functions_1.sh
+    alias bc='nano .bashrc'                   #used on bash not zsh
     alias funcurl='curl -k -s -o ~/zz_functions/functions_1 https://raw.githubusercontent.com/leighton-0/Aliases-Bashrc-Scripts-and-Functions/master/functions_1 | bash'
     alias xm='snap run xmind'
     alias sudo="sudo "
@@ -25,13 +21,9 @@
     alias pu='pushd'
     alias assd='cd /media/leighton/Andy_SSD/1_Linux'
     alias ttor='curl -x socks5h://localhost:9050 -s https://check.torproject.org/api/ip'    #test if TOR working
-
     alias t9='echo testing'
-
     alias srr='. .bashrc && . .bash_aliases'   #used on bash not zsh
-    alias srrz='. ~/.zshrc && . ~/.shell_aliases
     alias jor='gedit /media/leighton/Andy_SSD/1_Linux/journal'
-
     alias lmacc1='/usr/local/bin/./lmacc1.sh'
     alias lmacc0='/usr/local/bin/./lmacc0.sh'
     #alias tor='sudo -u kali -H torbrowser-launcher'
@@ -42,6 +34,9 @@
     
 # Docker
     alias dvwa='docker run --rm -it -p 80:80 vulnerables/web-dvwa'
+    alias df='docker-compose'
+    alias deb_1='dock­er run -it -d --name leigh_de­bian_v0 leigh_de­bian:v0 /bin/bash'   # load custom debian image
+    alias deb_2='dock­er exec -it leigh_de­bian_v0 /bin/bash'                            # run custom debian image
     
 # Snap
     alias srx='snap run xmind'
@@ -53,9 +48,6 @@
     alias dig='ssh root@134.122.111.227'
     alias do3='ssh root@134.122.111.227'
     alias do4='ssh root@134.122.111.227'
-
-# docker
-    alias df='docker-compose'
 
 # VPN
     alias vpns='nordvpn status'
