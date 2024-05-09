@@ -10,10 +10,9 @@
     alias v1='grep VERSION /etc/os-release'
     alias v2='uname -a'
     alias upd='sudo apt update && sudo apt -y full-upgrade'
-    alias ba='nano .bash_aliases'             #used on bash not zsh
+    alias ba='nano .bash_aliases'           
     alias bf='nano ~/zz_functions/functions_1.sh
-    alias bc='nano .bashrc'                   #used on bash not zsh
-    alias funcurl='curl -k -s -o ~/zz_functions/functions_1 https://raw.githubusercontent.com/leighton-0/Aliases-Bashrc-Scripts-and-Functions/master/functions_1 | bash'
+    alias bc='nano .bashrc'             
     alias xm='snap run xmind'
     alias sudo="sudo "
     alias xxx='sudo youtube-dl -U'
@@ -142,13 +141,4 @@
 # Start & Stop Services
     alias snms='service network-manager start'
     alias snms1='systemctl restart NetworkManager'
-
-    sudo service <ServiceName> status
-    sudo service <ServiceName> stop
-    sudo service <ServiceName> start
-    sudo service <ServiceName> restart
-
-    sudo systemctl status <ServiceName>
-  	sudo systemctl stop <ServiceName>
-    sudo systemctl start <ServiceName>
-    sudo systemctl restart <ServiceName>
+    
