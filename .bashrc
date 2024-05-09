@@ -32,4 +32,28 @@ echo 'export HISTCONTROL=ignoredups' >>  ~/.bashrc && source ~/.bashrc        # 
     echo 'shopt -s expand_aliases' >> /root/.bashrc                                                        # enable command aliasing
     echo 'alias do1="curl -k -s https://raw.githubusercontent.com/Gracetown58/DO/main/DO_Setup_Dev.sh | bash"'
     echo 'alias orgrc="rm .bashrc; mv .bashrc.bak .bashrc"'
+. .bashrc && . .bash_aliases'
+
+# setup for digall
+digall()
+{
+  local color_restore='\033[0m'
+  local color_red='\033[0;31m'
+  local color_light_green='\033[1;32m'
+  local color_light_blue='\033[1;34m'
+  local color_light_cyan='\033[1;36m'
+
+  if [ -z "$1" ]; then
+    echo -e "${color_red}Error: Please pass domain as first arg${color_restore}"
+  else
+    echo -e "${color_light_blue}Queries: (dig +noall +answer '$1' '<type>')...${color_light_cyan}\n"
+    # CNAME isn't needed because it will show up as the other record types
+    for t in SOA NS SPF TXT MX AAAA A; do
+      echo -e "${color_light_green}Querying for $t records...${color_restore}${color_light_cyan}"
+      dig +noall +answer "$1" "${t}"
+      echo -e "${color_restore}"
+    done
+  fi
+}
+
 Footer
