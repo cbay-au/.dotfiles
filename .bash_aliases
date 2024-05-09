@@ -11,7 +11,6 @@
     alias v2='uname -a'
     alias upd='sudo apt update && sudo apt -y full-upgrade'
     alias ba='nano .bash_aliases'           
-    alias bf='nano ~/zz_functions/functions_1.sh
     alias bc='nano .bashrc'             
     alias xm='snap run xmind'
     alias sudo="sudo "
