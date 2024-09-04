@@ -12,11 +12,7 @@ export EDITOR="nano"
 export PATH=/home/user/bin:$PATH
 
 export PATH="$PATH:.bash_aliases"
-#export HISTTIMEFORMAT='%F %T '
-export HISTTIMEFORMAT='%F '
-
-
-
+export HISTTIMEFORMAT=" %d\%m\%y "
 
 export HISTCONTROL=erasedups # don't store duplicate lines
 export HISTSIZE=100000 #remember 100k unique lines
@@ -59,8 +55,12 @@ digall()
 # This shows the shell nubber in the prompt
 PS1="Shell:${SHLVL} \w\$ "
 export PS1
-HISTTIMEFORMAT=" %d\%m\%y "
 
 
+if [ -f ~/.bash_aliases ]; then
+. ~/.bash_aliases
+fi
 
-Footer
+if [ -f ~/.bash_functions ]; then
+. ~/.bash_functions
+fi
