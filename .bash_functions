@@ -8,14 +8,10 @@
 # Add this to the .bashrc file
 #      . ~/zz_functions/functions
 
-# another test line
-
-
-# test line
 
 # extract anything
 
-function extract() {
+extract() {
   if [ -f $1 ] ; then
     case $1 in
       *.tar.bz2)  tar xjf $1    ;;
@@ -37,7 +33,7 @@ function extract() {
 
 
 
-function mybanner()
+mybanner()
 {
   echo "+------------------------------------------+"
   printf "| %-40s |\n" "`date`"
@@ -47,7 +43,7 @@ function mybanner()
 }
 
 
-function find_largest_files() {
+find_largest_files() {
     du -h -x -s -- * | sort -r -h | head -20;
 }
 
@@ -78,15 +74,12 @@ airgeddon ()  {
 	./airgeddon.sh
 }
 #+++++++++++++++++++++++++++++++++++++++++++
-#+++++++++++++++++++++++++++++++++++++++++++
 fluxion ()  {
 	cd fluxion
 	./fluxion.sh
 }
-#+++++++++++++++++++++++++++++++++++++++++++
-#
-#=================================
-----------IP Address & Location
+
+# IP Address & Location
 kkk () {
 	#echo "sets up anon IP & MAC"
 	#lmacc0
@@ -99,19 +92,7 @@ kkk () {
 }
 #=====
 #alias clone='echo dd if=/dev/sdb of=/dev/sdd bs=4096 status=progress'
-#dmesg
-#journalctl -f
-#+++++++++++++++++++++++++++++++++++++++++++
-airgeddon ()  {
-	cd airgeddon
-	./airgeddon.sh
-}
-#+++++++++++++++++++++++++++++++++++++++++++
-#+++++++++++++++++++++++++++++++++++++++++++
-fluxion ()  {
-	cd fluxion
-	./fluxion.sh
-}
+
 #+++++++++++++++++++++++++++++++++++++++++++
 #USER DEFINED SHELL FUNCTIONS
 #---------DISK UTILISATION REPORT
@@ -133,14 +114,12 @@ upd () {
 	echo "After upgrade"
 	cat laftupd.txt
 }
-#====================================
-# ---------PING TELSTRA
+
 ping1 () {
 	echo "ping test to Telstra"
 	ping 139.130.4.5 -c6
 }
-#===================================
-#----------PING CLOUDFLARE
+
 ping2 () {
 	echo "ping test to cloudflare (uses anycast so should be quick)"
 	ping  	1.1.1.1
@@ -148,8 +127,7 @@ ping2 () {
 	sleep 5
 	echo "PID=$PID"
 }
-#=================================
-#----------IP Address & Location
+#-IP Address & Location
 #iploc () {
 	#echo "ping test to cloudflare (uses anycast so should be quick)"
 	#wget -O ip_loc1 http://ipinfo.io/ip -qO - | wget -O ip_loc2 ~$ curl http://api.db-ip.com/v2/free/
@@ -159,22 +137,6 @@ ping2 () {
 	#wget ~$ curl http://api.db-ip.com/v2/free/203.219.72.15
 	#./iploc.sh
 #}
-#=================================
-----------IP Address & Location
-kkk () {
-	#echo "sets up anon IP & MAC"
-	#lmacc0
-	#sleep 30
-	nordvpn connect Double_VPN
-	sleep 30
-	#nordvpn set killswitch enable
-	#sleep 10
-	nordvpn status
-}
-#=====
-ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
 
 # Display the current Git branch in the Bash prompt.
 
@@ -190,7 +152,6 @@ function bash_prompt(){
     PS1='${debian_chroot:+($debian_chroot)}'${blu}'$(git_branch)'${pur}' \W'${grn}' \$ '${clr}
 }
 
-bash_prompt
 
 #   Grep (search) through your history for previous run commands:
 function hg() {
@@ -198,7 +159,7 @@ function hg() {
 }
 
 #   start a new project with Git:
-function git_init() {
+git_init() {
     if [ -z "$1" ]; then
         printf "%s\n" "Please provide a directory name.";
     else
@@ -212,8 +173,8 @@ function git_init() {
 }
 
 #   display useful system information when you open the terminal like this:
-    clear
-
+usefull_info()
+{
 printf "\n"
 printf "   %s\n" "IP ADDR: $(curl ifconfig.me)"
 printf "   %s\n" "USER: $(echo $USER)"
@@ -226,4 +187,4 @@ printf "   %s\n" "PACKAGES: $(dpkg --get-selections | wc -l)"
 printf "   %s\n" "RESOLUTION: $(xrandr | awk '/\*/{printf $1" "}')"
 printf "   %s\n" "MEMORY: $(free -m -h | awk '/Mem/{print $3"/"$2}')"
 printf "\n"
-
+}
