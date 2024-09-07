@@ -11,7 +11,8 @@
     alias v2='uname -a'
     alias upd='sudo apt update && sudo apt -y full-upgrade'
     alias ba='nano .bash_aliases'           
-    alias bc='nano .bashrc'             
+    alias bc='nano .bashrc'
+    alias bf='nano .bash_functions'             
     alias xm='snap run xmind'
     alias sudo="sudo "
     alias xxx='sudo youtube-dl -U'
