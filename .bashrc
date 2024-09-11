@@ -68,4 +68,8 @@ if [ -f ~/.bash_functions ]; then
 . ~/.bash_functions
 fi
 
+# This shows the shell nubber in the prompt
+PS1="Shell:${SHLVL} \w\$ "
+export PS1
+
 EOF
