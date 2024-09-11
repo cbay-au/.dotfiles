@@ -1,4 +1,5 @@
 
+#!/bin/bash
 #############################################################
 ##    TO BE ADDED TO .bashrc FILE                          ##
 #############################################################
@@ -7,6 +8,8 @@
 # Use the echo command to append lines to the .bashrc script
 # eg.
   #echo 'export APP=/opt/tinyos-2.x/apps' >> ~/.bashrc
+
+cat << "EOF" >> ~/.bashrc
 
 export EDITOR="nano"
 export PATH=/home/user/bin:$PATH
@@ -64,3 +67,5 @@ fi
 if [ -f ~/.bash_functions ]; then
 . ~/.bash_functions
 fi
+
+EOF
