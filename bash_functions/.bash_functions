@@ -9,15 +9,19 @@
 #      . ~/zz_functions/functions
 
 gsyncf() {
+   echo "sync my_random_scrips"
    cd ~/mycode/repos/my_random_scripts
    git add -A ; git commit -m "changes from $(uname -n) on $(date)" ; git push
    sleep 5
+   echo "sync cheat_sheets"
    cd ~/mycode/repos/cheat_sheets
    git add -A ; git commit -m "changes from $(uname -n) on $(date)" ; git push
    sleep 5
+   echo "sync dotfiles"
    cd ~/.dotfiles
    git add -A ; git commit -m "changes from $(uname -n) on $(date)" ; git push
    sleep 5
+   echo "Finished Sync'ing"
 }
 
 # extract anything
