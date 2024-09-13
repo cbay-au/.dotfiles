@@ -8,16 +8,21 @@
 # Add this to the .bashrc file
 #      . ~/zz_functions/functions
 
+# This function add, commits & pushes changes from local to Github repo's.
+# from:
+#   ~/.dotfiles
+#   ~/mycode/repos/cheatsheets
+#   ~/mycode/repos/my_random_scripts
 gsyncf() {
-   printf "\n\n${RED}sync my_random_scrips${NORMAL}\n"
+   printf "\n\n${RED}===sync my_random_scrips===${NORMAL}\n"
    cd ~/mycode/repos/my_random_scripts
    git add -A ; git commit -m "changes from $(uname -n) on $(date)" ; git push
    sleep 5
-   printf "\n\n${RED}sync cheat_sheets${NORMAL}\n"
+   printf "\n\n${RED===}sync cheat_sheets===${NORMAL}\n"
    cd ~/mycode/repos/cheat_sheets
    git add -A ; git commit -m "changes from $(uname -n) on $(date)" ; git push
    sleep 5
-   printf "\n\n${RED}sync dotfiles${NORMAL}\n"
+   printf "\n\n${RED}===sync dotfiles===${NORMAL}\n"
    cd ~/.dotfiles
    git add -A ; git commit -m "changes from $(uname -n) on $(date)" ; git push
    cd ~/
@@ -26,10 +31,7 @@ gsyncf() {
    printf " /n"
    printf "\n\n\n${BLUE}============================================================\n"
    printf "${RED} Finished Sync'ing\n"
-   printf "${BLUE}============================================================${NORMAL}\n\n"
-   printf " /n"
-   printf " /n"
-#   printf "\n\n${blue}Finished Sync'ing${normal}\n"
+   printf "${BLUE}============================================================${NORMAL}\n\n\n\n"
 }
 
 # extract anything
