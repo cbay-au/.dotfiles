@@ -141,4 +141,10 @@
 # Start & Stop Services
     alias snms='service network-manager start'
     alias snms1='systemctl restart NetworkManager'
+
+# Git
+    alias gsync="git add -A ; git commit -m "changes from $(uname -n) on $(date)" ; git push"
     
+# Cheat Sheets
+    alias ctmux='nano ~/mycode/repos/cheat_sheets/tmux.md'
+

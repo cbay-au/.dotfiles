@@ -8,6 +8,17 @@
 # Add this to the .bashrc file
 #      . ~/zz_functions/functions
 
+gsyncf() {
+   cd ~/mycode/repos/my_random_scripts
+   git add -A ; git commit -m "changes from $(uname -n) on $(date)" ; git push
+   sleep 5
+   cd ~/mycode/repos/cheat_sheets
+   git add -A ; git commit -m "changes from $(uname -n) on $(date)" ; git push
+   sleep 5
+   cd ~/.dotfiles
+   git add -A ; git commit -m "changes from $(uname -n) on $(date)" ; git push
+   sleep 5
+}
 
 # extract anything
 
