@@ -9,20 +9,20 @@
 #      . ~/zz_functions/functions
 
 gsyncf() {
-   printf "${blue}sync my_random_scrips${normal}"
+   printf "${blue}sync my_random_scrips${normal}\n"
    cd ~/mycode/repos/my_random_scripts
    git add -A ; git commit -m "changes from $(uname -n) on $(date)" ; git push
    sleep 5
-   printf "${blue}sync cheat_sheets${normal}"
+   printf "${blue}sync cheat_sheets${normal}\n"
    cd ~/mycode/repos/cheat_sheets
    git add -A ; git commit -m "changes from $(uname -n) on $(date)" ; git push
    sleep 5
-   printf "${blue}sync dotfiles${normal}"
+   printf "${blue}sync dotfiles${normal}\n"
    cd ~/.dotfiles
    git add -A ; git commit -m "changes from $(uname -n) on $(date)" ; git push
    cd ~/
    sleep 5
-   printf "${blue}Finished Sync'ing${normal}"
+   printf "${blue}Finished Sync'ing${normal}\n"
 }
 
 # extract anything
