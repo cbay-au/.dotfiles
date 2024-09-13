@@ -22,10 +22,10 @@ gsyncf() {
    git add -A ; git commit -m "changes from $(uname -n) on $(date)" ; git push
    cd ~/
    sleep 5
-   printf '\n\n\n{BLUE}============================================================\n'
-   printf '[+]{RED} Updating System\n'
-   printf '{BLUE}============================================================{NORMAL}\n\n'
-   printf "\n\n${blue}Finished Sync'ing${normal}\n"
+   printf "\n\n\n{BLUE}============================================================\n"
+   printf "[+]{RED} Finished Sync'ing\n"
+   printf "{BLUE}============================================================{NORMAL}\n\n"
+#   printf "\n\n${blue}Finished Sync'ing${normal}\n"
 }
 
 # extract anything
