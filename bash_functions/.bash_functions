@@ -9,19 +9,22 @@
 #      . ~/zz_functions/functions
 
 gsyncf() {
-   printf "\n\n${blue}sync my_random_scrips${normal}\n"
+   printf "\n\n${RED}sync my_random_scrips${NORMAL}\n"
    cd ~/mycode/repos/my_random_scripts
    git add -A ; git commit -m "changes from $(uname -n) on $(date)" ; git push
    sleep 5
-   printf "\n\n${blue}sync cheat_sheets${normal}\n"
+   printf "\n\n${RED}sync cheat_sheets${NORMAL}\n"
    cd ~/mycode/repos/cheat_sheets
    git add -A ; git commit -m "changes from $(uname -n) on $(date)" ; git push
    sleep 5
-   printf "\n\n${blue}sync dotfiles${normal}\n"
+   printf "\n\n${RED}sync dotfiles${NORMAL}\n"
    cd ~/.dotfiles
    git add -A ; git commit -m "changes from $(uname -n) on $(date)" ; git push
    cd ~/
    sleep 5
+   printf '\n\n\n{BLUE}============================================================\n'
+   printf '[+]{RED} Updating System\n'
+   printf '{BLUE}============================================================{NORMAL}\n\n'
    printf "\n\n${blue}Finished Sync'ing${normal}\n"
 }
 
