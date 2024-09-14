@@ -15,10 +15,14 @@
 #   ~/mycode/repos/my_random_scripts
 gsyncf() {
    printf "\n\n${RED}===sync my_random_scrips===${NORMAL}\n"
+   echo "enter the password"
+   read -s password
+   openssl enc -aes-256-cbc -salt -in ~/mycode/.env -out ~/mycode/repos/my_random_scripts/.en>
+   echo "File encrypted successfully"
    cd ~/mycode/repos/my_random_scripts
    git add -A ; git commit -m "changes from $(uname -n) on $(date)" ; git push
    sleep 5
-   printf "\n\n${RED===}sync cheat_sheets===${NORMAL}\n"
+   printf "\n\n${RED}===sync cheat_sheets===${NORMAL}\n"
    cd ~/mycode/repos/cheat_sheets
    git add -A ; git commit -m "changes from $(uname -n) on $(date)" ; git push
    sleep 5
@@ -28,9 +32,8 @@ gsyncf() {
    cd ~/
    sleep 5
    printf " \n"
-   printf " \n"
    printf "\n\n\n${BLUE}============================================================\n"
-   printf "${RED} **Finished Sync'ing - Local is now UPD with github repo**\n"
+   printf "${RED} ** Finished Sync'ing - Local is now UPD with github repo **\n"
    printf "${BLUE}============================================================${NORMAL}\n\n\n\n"
 }
 
