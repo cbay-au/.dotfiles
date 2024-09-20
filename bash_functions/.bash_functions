@@ -1,5 +1,5 @@
 
-#!bin/bash
+#!/bin/bash
 
 #################################################################
 ##                      MY FUNCTIONS                           ##
@@ -13,13 +13,18 @@
 #   ~/.dotfiles
 #   ~/mycode/repos/cheatsheets
 #   ~/mycode/repos/my_random_scripts
+
+fun_test() {
+printf "${RED}fun_test working ok${NORMAL}\n"
+}
+
 gsyncf() {
-   printf "\n\n${RED}===sync my_random_scrips===${NORMAL}\n"
+   printf "\n\n${RED}===sync My_Random_Scrips===${NORMAL}\n"
    echo "enter the password"
    read -s password
-   openssl enc -aes-256-cbc -salt -in ~/mycode/.env -out ~/mycode/repos/my_random_scripts/.en>
+   openssl enc -aes-256-cbc -salt -in ~/mycode/.env -out ~/mycode/repos/My_Random_Scripts/.env.enc -k $password
    echo "File encrypted successfully"
-   cd ~/mycode/repos/my_random_scripts
+   cd ~/mycode/repos/My_Random_Scripts
    git add -A ; git commit -m "changes from $(uname -n) on $(date)" ; git push
    sleep 5
    printf "\n\n${RED}===sync cheat_sheets===${NORMAL}\n"
@@ -27,7 +32,7 @@ gsyncf() {
    git add -A ; git commit -m "changes from $(uname -n) on $(date)" ; git push
    sleep 5
    printf "\n\n${RED}===sync dotfiles===${NORMAL}\n"
-   cd ~/.dotfiles
+   cd ~/mycode/repos/.dotfiles
    git add -A ; git commit -m "changes from $(uname -n) on $(date)" ; git push
    cd ~/
    sleep 5
@@ -37,10 +42,32 @@ gsyncf() {
    printf "${BLUE}============================================================${NORMAL}\n\n\n\n"
 }
 
+test_fun() {
+echo "functions working ok"
+}
+
+# functions for th todo.txt program
+tla() { [[ $# -eq 0 ]] && cat "${TODO}" || (echo "$(echo $* | md5sum | cut -c 1-4) 👉 $*" > "${TODO}" && cat "${TODO}") ;}
+# $# is the number of posutuion parameters; if this is equal to 0 then is lists all the todo's
+# or
+
+tlr() { sed -i '' "/^$*/d" $TODO && cat ${TODO} ;}
+
+tl() { cat ${TODO} ;}
+
+tlc() { cat /dev/null > ${TODO} ;}
+# tla (Todo List Add): Adds tasks to the list. It generates a 4-character md5 hash to serve as a unique identifier for each task.
+# If no argument is passed, it displays the current task list.
+# tlr (Todo List Remove): Removes tasks from the list by matching their md5 identifier.
+# tl (Todo List): Simply displays the current list.
+# tlc (Todo List Clear): Clears the entire task list, removing all entries at once.
+# At the end of each operation, the current state of your TODO list will be displayed.
+
+
 # extract anything
 
 extract() {
-  if [ -f $1 ] ; then
+  if [[ -f $1 ]]; then
     case $1 in
       *.tar.bz2)  tar xjf $1    ;;
       *.tar.gz) tar xzf $1    ;;
@@ -60,9 +87,7 @@ extract() {
 }
 
 
-
-mybanner()
-{
+mybanner() {
   echo "+------------------------------------------+"
   printf "| %-40s |\n" "`date`"
   echo "|                                          |"
@@ -107,6 +132,10 @@ fluxion ()  {
 	./fluxion.sh
 }
 
+test117() {
+echo "working upto line 117"
+}
+if [[ 1 -eq 0 ]]; then
 # IP Address & Location
 kkk () {
 	#echo "sets up anon IP & MAC"
@@ -134,7 +163,7 @@ upd () {
 	grep VERSION /etc/os-release > lb4upd.txt && uname -a >> lb4upd.txt
 	echo "Update Kali"
 	apt update && apt -y full-upgrade
-	apt-get update --fix-missing
+	apt update --fix-missing
 	apt autoremove
 	grep VERSION /etc/os-release > laftupd.txt && uname -a >> laftupd.txt
 	echo "Before upgrade"
@@ -142,7 +171,6 @@ upd () {
 	echo "After upgrade"
 	cat laftupd.txt
 }
-
 ping1 () {
 	echo "ping test to Telstra"
 	ping 139.130.4.5 -c6
@@ -216,3 +244,4 @@ printf "   %s\n" "RESOLUTION: $(xrandr | awk '/\*/{printf $1" "}')"
 printf "   %s\n" "MEMORY: $(free -m -h | awk '/Mem/{print $3"/"$2}')"
 printf "\n"
 }
+fi

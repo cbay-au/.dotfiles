@@ -5,61 +5,38 @@
 
 # To print alias without executing use \
 # Miscelanious
-
-    alias sdn='shutdown now'
+    alias testa='echo "aliases working ok"'
     alias v1='grep VERSION /etc/os-release'
     alias v2='uname -a'
     alias upd='sudo apt update && sudo apt -y full-upgrade'
-    alias ba='nano .bash_aliases'           
-    alias bc='nano .bashrc'
-    alias bf='nano .bash_functions'             
-    alias xm='snap run xmind'
+    alias ba='nano ~/.bash_aliases'           
+    alias bc='nano ~/.bashrc'
+    alias bf='nano ~/.bash_functions'             
     alias sudo="sudo "
     alias xxx='sudo youtube-dl -U'
     alias po='popd'
     alias pu='pushd'
     alias assd='cd /media/leighton/Andy_SSD/1_Linux'
     alias ttor='curl -x socks5h://localhost:9050 -s https://check.torproject.org/api/ip'    #test if TOR working
-    alias t9='echo testing'
-    alias srr='. .bashrc && . .bash_aliases'   #used on bash not zsh
-    alias jor='gedit /media/leighton/Andy_SSD/1_Linux/journal'
-    alias lmacc1='/usr/local/bin/./lmacc1.sh'
-    alias lmacc0='/usr/local/bin/./lmacc0.sh'
-    #alias tor='sudo -u kali -H torbrowser-launcher'
+    alias srr='. .bashrc'   # source .bashrc
+    alias srrf='. .bash_functions
     
 # Reconftw
-    alias recon='./reconftw.sh -d ecosymbiosis.com -f'
-    alias recon-f=
+    alias recon='./reconftw.sh -d $1 -f'
     
 # Docker
-    alias dvwa='docker run --rm -it -p 80:80 vulnerables/web-dvwa'
     alias df='docker-compose'
-    alias deb_1='dock­er run -it -d --name leigh_de­bian_v0 leigh_de­bian:v0 /bin/bash'   # load custom debian image
-    alias deb_2='dock­er exec -it leigh_de­bian_v0 /bin/bash'                            # run custom debian image
+    alias deb_1='docker run -it -d --name leigh_debian_v0 leigh_debian:v0 /bin/bash'   # load custom debian image
+    alias deb_2='docker exec -it leigh_debian_v0 /bin/bash'                            # run custom debian image
     
-# Snap
-    alias srx='snap run xmind'
-    alias sry='snap run youtube-dl'
-    alias sl='snap list'
-    
-# Digital Ocean
-    alias do1='ssh root@xxx.65.55.161'
-    alias dig='ssh root@134.122.111.227'
-    alias do3='ssh root@134.122.111.227'
-    alias do4='ssh root@134.122.111.227'
-
-# VPN
-    alias vpns='nordvpn status'
-    alias vpnset='nordvpn settings'
-    alias vpnc='nordvpn connect Sweden'
-    alias vpndc='nordvpn connect Double_VPN'
-    alias vpno='s obfuscate on'
-    alias vpnuk='nordvpn c 2195'
-    alias ethers='cat >> /.config/wireshark/ethers
-    alias vpnhk='nordvpn connect Hong_Kong'
-
-# disk usage
- alias duf='du -sk * | sort -n | perl -ne '\''($s,$f)=split(m{\t});for (qw(K M G)) {if($s<1024) {printf("%.1f",$s);print "$_\t$f"; last};$s=$s/1024}'\'
+# VPN - used when using nordvpn - needs uncommenting
+    #alias vpns='nordvpn status'
+    #alias vpnset='nordvpn settings'
+    #alias vpnc='nordvpn connect Sweden'
+    #alias vpndc='nordvpn connect Double_VPN'
+    #alias vpno='s obfuscate on'
+    #alias vpnuk='nordvpn c 2195'
+    #alias vpnhk='nordvpn connect Hong_Kong'
 
 # fast back cd
     alias ..='cd ..'
@@ -81,7 +58,7 @@
     alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
 
 # Print out the local IP on en0.
-    alias iplocal='ifconfig en0 | grep --word-regexp inet | awk "{print $2}"'
+    alias iplocal='ip en0 | grep --word-regexp inet | awk "{print $2}"'
     #alias ip='wget http://ipinfo.io/ip -qO -'
     alias iploc='./iploc.sh'
 
@@ -120,6 +97,7 @@
     alias bye="exit"
     alias die="exit"
     alias quit="exit"
+    alias sdn='shutdown now'
 
 
 # Parenting changing perms on /
@@ -146,5 +124,10 @@
     alias gsync="git add -A ; git commit -m "changes from $(uname -n) on $(date)" ; git push"
     
 # Cheat Sheets
-    alias ctmux='nano ~/mycode/repos/cheat_sheets/tmux.md'
+   alias csdir='cd ~/mycode/repos/cheat_sheets && ls -la'		# move to cheat sheet direcotry & print file listing
+   alias csnew='nano ~/mycode/repos/cheat_sheets/${1}'			# add a cs file name.md as a parameter to the alias
+   alias ctmux='nano ~/mycode/repos/cheat_sheets/tmux.md'
+   alias cstree='nano ~/mycode/repos/cheat_sheets/tree.md'
+   allias cshttp='cat ~/mycode/repos/cheat_sheets/http_codes.md'
+   alias csgists='nano ~/mycode/repos/cheat_sheets/gists.md'
 
