@@ -18,11 +18,15 @@ fun_test() {
 printf "${RED}fun_test working ok${NORMAL}\n"
 }
 
+csdirf() {
+   cd ~/mycode/repos/cheat_sheets && ls -la
+}
+
 gsyncf() {
    printf "\n\n${RED}===sync My_Random_Scrips===${NORMAL}\n"
-   echo "enter the password"
-   read -s password
-   openssl enc -aes-256-cbc -salt -in ~/mycode/.env -out ~/mycode/repos/My_Random_Scripts/.env.enc -k $password
+#   echo "enter the password"
+#  read -s PASSWORD
+   openssl enc -aes-256-cbc -salt -in ~/mycode/.env -out ~/mycode/repos/My_Random_Scripts/.env.enc -k $PASSWORD
    echo "File encrypted successfully"
    cd ~/mycode/repos/My_Random_Scripts
    git add -A ; git commit -m "changes from $(uname -n) on $(date)" ; git push

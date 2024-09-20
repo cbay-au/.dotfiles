@@ -124,7 +124,7 @@
     alias gsync="git add -A ; git commit -m "changes from $(uname -n) on $(date)" ; git push"
     
 # Cheat Sheets
-   alias csdir='cd ~/mycode/repos/cheat_sheets && ls -la'		# move to cheat sheet direcotry & print file listing
+   alias csdir='csdirf'		# move to cheat sheet direcotry & print file listing
    alias csnew='nano ~/mycode/repos/cheat_sheets/${1}'			# add a cs file name.md as a parameter to the alias
    alias ctmux='nano ~/mycode/repos/cheat_sheets/tmux.md'
    alias cstree='nano ~/mycode/repos/cheat_sheets/tree.md'
