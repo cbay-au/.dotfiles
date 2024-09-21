@@ -38,6 +38,10 @@ gsyncf() {
    printf "\n\n${RED}===sync dotfiles===${NORMAL}\n"
    cd ~/mycode/repos/.dotfiles
    git add -A ; git commit -m "changes from $(uname -n) on $(date)" ; git push
+   sleep 5
+   printf "\n\n${RED}===sync DigitalOcean_Droplet_Setup===${NORMAL}\n"
+   cd ~/mycode/repos/DigitalOcean_Droplet_Setup
+   git add -A ; git commit -m "changes from $(uname -n) on $(date)" ; git push
    cd ~/
    sleep 5
    printf " \n"

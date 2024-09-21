@@ -81,7 +81,7 @@
     alias l='ls -lAh'
     alias ls="ls --color -F"
     alias la="ls -a"
-    alias ll="ls -al"
+    alias ll='ls -la'
 
 # Ping Commands
     alias pg="ping google.com -c 5"
