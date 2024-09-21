@@ -45,7 +45,7 @@ gsyncf() {
    cd ~/
    sleep 5
    printf " \n"
-   printf "\n\n\n${BLUE}============================================================\n"
+   printf "\n\n${BLUE}============================================================\n"
    printf "${RED} ** Finished Sync'ing - Local is now UPD with github repo **\n"
    printf "${BLUE}============================================================${NORMAL}\n\n\n\n"
 }
