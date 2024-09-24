@@ -5,6 +5,7 @@
 
 # To print alias without executing use \
 # Miscelanious
+    alias teh='the'
     alias testa='echo "aliases working ok"'
     alias v1='grep VERSION /etc/os-release'
     alias v2='uname -a'
@@ -19,7 +20,9 @@
     alias assd='cd /media/leighton/Andy_SSD/1_Linux'
     alias srr='. ~/.bashrc'  		 # source .bashrc
     alias srrf='. ~/.bash_functions'
-    
+    # alias t='~/mycode/repos/My_Random_scripts/todo/todo.sh'
+    alias t=bin/todo/todo    
+    alias d=bin/todo/todone    
 # Reconftw
     alias recon='./reconftw.sh -d $1 -f'
     
@@ -119,16 +122,13 @@
     alias snms='service network-manager start'
     alias snms1='systemctl restart NetworkManager'
 
-# Git
-    alias gsync="git add -A ; git commit -m "changes from $(uname -n) on $(date)" ; git push"
-    
 # Cheat Sheets
    alias csdir='csdirf'		# move to cheat sheet direcotry & print file listing
    alias csnew='nano ~/mycode/repos/cheat_sheets/${1}'			# add a cs file name.md as a parameter to the alias
    alias ctmux='nano ~/mycode/repos/cheat_sheets/tmux.md'
    alias cstree='nano ~/mycode/repos/cheat_sheets/tree.md'
-   allias cshttp='cat ~/mycode/repos/cheat_sheets/http_codes.md'
+   alias cshttp='cat ~/mycode/repos/cheat_sheets/http_codes.md'
    alias csgists='nano ~/mycode/repos/cheat_sheets/gists.md'
    alias cswpscan='nano ~/mycode/repos/cheat_sheets/wpscan.md'
    alias cssed='nano ~/mycode/repos/cheat_sheets/sed.md'
-   alias csawk=''nano ~/mycode/repos/cheat_sheets/awk.md'
+   alias csawk='nano ~/mycode/repos/cheat_sheets/awk.md'
