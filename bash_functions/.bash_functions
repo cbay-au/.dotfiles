@@ -14,6 +14,12 @@
 #   ~/mycode/repos/cheatsheets
 #   ~/mycode/repos/my_random_scripts
 
+function cuttail() # cut last n lines in file, 10 by default
+{
+    nlines=${2:-10}
+    sed -n -e :a -e "1,${nlines}!{P;N;D;};N;ba" $1
+}
+
 fun_test() {
 printf "${RED}fun_test working ok${NORMAL}\n"
 }

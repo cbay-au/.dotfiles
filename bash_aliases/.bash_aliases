@@ -17,9 +17,8 @@
     alias po='popd'
     alias pu='pushd'
     alias assd='cd /media/leighton/Andy_SSD/1_Linux'
-    alias ttor='curl -x socks5h://localhost:9050 -s https://check.torproject.org/api/ip'    #test if TOR working
-    alias srr='. .bashrc'   # source .bashrc
-    alias srrf='. .bash_functions
+    alias srr='. ~/.bashrc'  		 # source .bashrc
+    alias srrf='. ~/.bash_functions'
     
 # Reconftw
     alias recon='./reconftw.sh -d $1 -f'
@@ -130,4 +129,6 @@
    alias cstree='nano ~/mycode/repos/cheat_sheets/tree.md'
    allias cshttp='cat ~/mycode/repos/cheat_sheets/http_codes.md'
    alias csgists='nano ~/mycode/repos/cheat_sheets/gists.md'
-
+   alias cswpscan='nano ~/mycode/repos/cheat_sheets/wpscan.md'
+   alias cssed='nano ~/mycode/repos/cheat_sheets/sed.md'
+   alias csawk=''nano ~/mycode/repos/cheat_sheets/awk.md'
