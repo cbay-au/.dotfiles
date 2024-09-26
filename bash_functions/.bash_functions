@@ -39,7 +39,8 @@ gsyncf() {
    sleep 5
    printf "\n\n${RED}===sync cheat_sheets===${NORMAL}\n"
    cd ~/mycode/repos/cheat_sheets
-   git add -A ; git commit -m "changes from $(uname -n) on $(date)" ; git push
+#   git add -A ; git commit -m "changes from $(uname -n) on $(date)" ; git push
+   git add -A ; git commit -m "changes from $(uname -n) on $(date)" ; git push --force ;
    sleep 5
    printf "\n\n${RED}===sync dotfiles===${NORMAL}\n"
    cd ~/mycode/repos/.dotfiles
