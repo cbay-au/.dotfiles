@@ -20,9 +20,11 @@
     alias assd='cd /media/leighton/Andy_SSD/1_Linux'
     alias srr='. ~/.bashrc'  		 # source .bashrc
     alias srrf='. ~/.bash_functions'
-    # alias t='~/mycode/repos/My_Random_scripts/todo/todo.sh'
-    alias t=bin/todo/todo    
-    alias d=bin/todo/todone    
+    #alias t='todo'
+    alias t="~/mycode/repos/My_Random_Scripts/todo/todo"
+    alias d='~/mycode/repos/My_Random_Scripts/todo/todone'
+#alias t=todo
+#alias d=todone    
 # Reconftw
     alias recon='./reconftw.sh -d $1 -f'
     
@@ -127,8 +129,13 @@
    alias csnew='nano ~/mycode/repos/cheat_sheets/${1}'			# add a cs file name.md as a parameter to the alias
    alias ctmux='nano ~/mycode/repos/cheat_sheets/tmux.md'
    alias cstree='nano ~/mycode/repos/cheat_sheets/tree.md'
-   alias cshttp='cat ~/mycode/repos/cheat_sheets/http_codes.md'
+   alias cshttp='nano ~/mycode/repos/cheat_sheets/http.md'
    alias csgists='nano ~/mycode/repos/cheat_sheets/gists.md'
    alias cswpscan='nano ~/mycode/repos/cheat_sheets/wpscan.md'
    alias cssed='nano ~/mycode/repos/cheat_sheets/sed.md'
    alias csawk='nano ~/mycode/repos/cheat_sheets/awk.md'
+   alias csfind='nano ~/mycode/repos/cheat_sheets/find.md'
+   alias csfind='nano ~/mycode/repos/cheat_sheets/csreconftw'
+   alias csports='nano ~/mycode/repos/cheat_sheets/ports.md'
+   alias cswp='nano ~/mycode/repos/cheat_sheets/wordpress.md'
+   
