@@ -21,8 +21,8 @@
     alias srr='. ~/.bashrc'  		 # source .bashrc
     alias srrf='. ~/.bash_functions'
     #alias t='todo'
-    alias t="~/mycode/repos/My_Random_Scripts/todo/todo"
-    alias d='~/mycode/repos/My_Random_Scripts/todo/todone'
+    alias t="todo"
+    alias d='todone'
 #alias t=todo
 #alias d=todone    
 # Reconftw
