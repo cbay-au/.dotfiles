@@ -131,7 +131,7 @@
 # Cheat Sheets
    alias csdir='csdirf'		# move to cheat sheet direcotry & print file listing
    alias csnew='nano ~/mycode/repos/cheat_sheets/${1}'			# add a cs file name.md as a parameter to the alias
-   alias ctmux='nano ~/mycode/repos/cheat_sheets/tmux.md'
+   alias cstmux='nano ~/mycode/repos/cheat_sheets/tmux.md'
    alias cstree='nano ~/mycode/repos/cheat_sheets/tree.md'
    alias cshttp='nano ~/mycode/repos/cheat_sheets/http.md'
    alias csgists='nano ~/mycode/repos/cheat_sheets/gists.md'
@@ -143,3 +143,7 @@
    alias csports='nano ~/mycode/repos/cheat_sheets/ports.md'
    alias cswp='nano ~/mycode/repos/cheat_sheets/wordpress.md'
    alias csbash='nano ~/mycode/repos/cheat_sheets/bash.md'   
+   alias cssubfinder='nano ~/mycode/repos/cheat_sheets/subfnder.md'
+   alias csnmap1='nano ~/mycode/repos/cheat_sheets/nmap_1.md'
+   alias csnmap2='nano ~/mycode/repos/cheat_sheets/nmap_2.md'
+   alias csnmapnse='nano ~/mycode/repos/cheat_sheets/nmap_nse.md'
