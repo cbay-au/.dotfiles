@@ -20,11 +20,12 @@
     alias assd='cd /media/leighton/Andy_SSD/1_Linux'
     alias srr='. ~/.bashrc'  		 # source .bashrc
     alias srrf='. ~/.bash_functions'
+    alias srra='. ~/.bash_aliases'
     #alias t='todo'
     alias t="todo"
     alias d='todone'
-#alias t=todo
-#alias d=todone    
+
+
 # Reconftw
     alias recon='./reconftw.sh -d $1 -f'
     
@@ -124,6 +125,9 @@
     alias snms='service network-manager start'
     alias snms1='systemctl restart NetworkManager'
 
+# ReconFTW
+    alias recon='cd ~/mycode/reconftw/Recon'
+
 # Cheat Sheets
    alias csdir='csdirf'		# move to cheat sheet direcotry & print file listing
    alias csnew='nano ~/mycode/repos/cheat_sheets/${1}'			# add a cs file name.md as a parameter to the alias
@@ -138,4 +142,4 @@
    alias csfind='nano ~/mycode/repos/cheat_sheets/csreconftw'
    alias csports='nano ~/mycode/repos/cheat_sheets/ports.md'
    alias cswp='nano ~/mycode/repos/cheat_sheets/wordpress.md'
-   
+   alias csbash='nano ~/mycode/repos/cheat_sheets/bash.md'   
