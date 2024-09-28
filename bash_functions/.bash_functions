@@ -33,7 +33,7 @@ gsyncf() {
    touch ~/mycode/test_deletex
    touch ~/mycode/.env.tmp
    cat ~/mycode/.env > ~/mycode/.env.tmp		# there are a couple of config files needed to be enc & saved
-   cat ~/.config/subfinder/provider-config.yml >> ~/mycode/.env.tmp
+   cat ~/.config/subfinder/provider-config.yaml >> ~/mycode/.env.tmp
    cat ~/.config/waymore/config.yml >> ~/mycode/.env.tmp
 #  echo "enter the password"
 #  read -s PASSWORD	PASSWORD is now entered permanently as a env var
