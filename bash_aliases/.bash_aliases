@@ -143,7 +143,7 @@
    alias csports='nano ~/mycode/repos/cheat_sheets/ports.md'
    alias cswp='nano ~/mycode/repos/cheat_sheets/wordpress.md'
    alias csbash='nano ~/mycode/repos/cheat_sheets/bash.md'   
-   alias cssubfinder='nano ~/mycode/repos/cheat_sheets/subfnder.md'
+   alias cssubfinder='nano ~/mycode/repos/cheat_sheets/subfinder.md'
    alias csnmap1='nano ~/mycode/repos/cheat_sheets/nmap_1.md'
    alias csnmap2='nano ~/mycode/repos/cheat_sheets/nmap_2.md'
    alias csnmapnse='nano ~/mycode/repos/cheat_sheets/nmap_nse.md'

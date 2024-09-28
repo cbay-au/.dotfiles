@@ -30,10 +30,14 @@ csdirf() {
 
 gsyncf() {
    printf "\n\n${RED}===sync My_Random_Scrips===${NORMAL}\n"
-#   echo "enter the password"
-#  read -s PASSWORD
-   openssl enc -aes-256-cbc -salt -in ~/mycode/.env -out ~/mycode/repos/My_Random_Scripts/.env.enc -k $PASSWORD
+   cat ~/mycode/.env > ~/mycode/.env.tmp		# there are a couple of config files needed to be enc & saved
+   cat ~/.config/subfinder/provider-config.yml >> ~/mycode/.env.tmp
+   cat ~/.config/waymore/config.yml >> ~/mycode/.env.tmp
+#  echo "enter the password"
+#  read -s PASSWORD	PASSWORD is now entered permanently as a env var
+   openssl enc -aes-256-cbc -salt -in ~/mycode/.env.tmp -out ~/mycode/repos/My_Random_Scripts/.env.enc -k $PASSWORD
    echo "File encrypted successfully"
+#   rm ~/mycode/.env.tmp		# delete the .enc.tmp file
    cd ~/mycode/repos/My_Random_Scripts
    git add -A ; git commit -m "changes from $(uname -n) on $(date)" ; git push
    sleep 5
