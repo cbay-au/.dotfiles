@@ -30,6 +30,7 @@ csdirf() {
 
 gsyncf() {
    printf "\n\n${RED}===sync My_Random_Scrips===${NORMAL}\n"
+   touch ~/mycode/test_deletex
    touch ~/mycode/.env.tmp
    cat ~/mycode/.env > ~/mycode/.env.tmp		# there are a couple of config files needed to be enc & saved
    cat ~/.config/subfinder/provider-config.yml >> ~/mycode/.env.tmp
