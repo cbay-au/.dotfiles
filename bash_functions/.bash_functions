@@ -24,6 +24,13 @@ fun_test() {
 printf "${RED}fun_test working ok${NORMAL}\n"
 }
 
+function _exit()        # function to run upon exit of shell
+{
+    echo -e "${RED}Hasta la vista, baby${NC}"
+}
+trap _exit EXIT
+
+
 csdirf() {
    cd ~/mycode/repos/cheat_sheets && ls -la
 }
