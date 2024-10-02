@@ -109,7 +109,8 @@
     alias chown='chown --preserve-root'
     alias chmod='chmod --preserve-root'
     alias chgrp='chgrp --preserve-root'
-
+# TMUX
+    alias srrt='tmux source ~/.tmux.conf'	# source .conf file
 
 # System state
     alias reboot="sudo /sbin/reboot"
@@ -139,11 +140,14 @@
    alias cssed='nano ~/mycode/repos/cheat_sheets/sed.md'
    alias csawk='nano ~/mycode/repos/cheat_sheets/awk.md'
    alias csfind='nano ~/mycode/repos/cheat_sheets/find.md'
-   alias csfind='nano ~/mycode/repos/cheat_sheets/csreconftw'
+   alias csreconftw='nano ~/mycode/repos/cheat_sheets/csreconftw'
    alias csports='nano ~/mycode/repos/cheat_sheets/ports.md'
    alias cswp='nano ~/mycode/repos/cheat_sheets/wordpress.md'
    alias csbash='nano ~/mycode/repos/cheat_sheets/bash.md'   
    alias cssubfinder='nano ~/mycode/repos/cheat_sheets/subfinder.md'
+   alias csnmap='nano ~/mycode/repos/cheat_sheets/nmap_1.md'
    alias csnmap1='nano ~/mycode/repos/cheat_sheets/nmap_1.md'
    alias csnmap2='nano ~/mycode/repos/cheat_sheets/nmap_2.md'
+   alias csnmap3='nano ~/mycode/repos/cheat_sheets/nmap_3.md'
    alias csnmapnse='nano ~/mycode/repos/cheat_sheets/nmap_nse.md'
+  
