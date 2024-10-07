@@ -13,13 +13,15 @@
     alias ba='nano ~/.bash_aliases'           
     alias bc='nano ~/.bashrc'
     alias bf='nano ~/.bash_functions'             
+    alias be='nano ~/.env'
+    alias bt='nano ~/.tmux.conf'
     alias sudo="sudo "
     alias xxx='sudo youtube-dl -U'
     alias po='popd'
     alias pu='pushd'
     alias assd='cd /media/leighton/Andy_SSD/1_Linux'
     alias srr='. ~/.bashrc'  		 # source .bashrc
-    alias srrf='. ~/.bash_functions'
+    alias srrf='. ~/.bash_functions && testfun && testfunend'
     alias srra='. ~/.bash_aliases'
     #alias t='todo'
     alias t="todo"
@@ -45,11 +47,9 @@
 
 # fast back cd
     alias ..='cd ..'
-    alias ...='cd ../../../'
-    alias ....='cd ../../../../'
-    alias .....='cd ../../../../'
-    alias .4='cd ../../../../'
-    alias .5='cd ../../../../..'
+    alias ...='cd ../../'
+    alias ....='cd ~'
+    alias ..ll='cd ../ && ll'
 
 # show pathes
     alias path='echo -e ${PATH//:/\\n}'
@@ -109,8 +109,11 @@
     alias chown='chown --preserve-root'
     alias chmod='chmod --preserve-root'
     alias chgrp='chgrp --preserve-root'
+
 # TMUX
     alias srrt='tmux source ~/.tmux.conf'	# source .conf file
+    alias trp='tmux select-pane -T' 		# add pane name after entering alias
+    alias trpn=" echo 'tmux select-pane -t 1 -T (some pane title- include pane # (-t))'"
 
 # System state
     alias reboot="sudo /sbin/reboot"
@@ -145,7 +148,7 @@
    alias cswp='nano ~/mycode/repos/cheat_sheets/wordpress.md'
    alias csbash='nano ~/mycode/repos/cheat_sheets/bash.md'   
    alias cssubfinder='nano ~/mycode/repos/cheat_sheets/subfinder.md'
-   alias csnmap='nano ~/mycode/repos/cheat_sheets/nmap_1.md'
+   alias csnmap='nano ~/mycode/repos/cheat_sheets/nmap_3.md'
    alias csnmap1='nano ~/mycode/repos/cheat_sheets/nmap_1.md'
    alias csnmap2='nano ~/mycode/repos/cheat_sheets/nmap_2.md'
    alias csnmap3='nano ~/mycode/repos/cheat_sheets/nmap_3.md'
