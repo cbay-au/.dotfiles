@@ -69,10 +69,11 @@
     #alias ip='wget http://ipinfo.io/ip -qO -'
     alias iploc='./iploc.sh'
 
-
+# Grep
     alias grep='grep --color=auto'
     alias egrep='egrep --color=auto'
     alias fgrep='fgrep --color=auto'
+    alias wpcf7=grep '/wp-content/plugins/contact-form-7/' $1
 
 
 # History commands
@@ -155,4 +156,6 @@
    alias csnmap2='nano ~/mycode/repos/cheat_sheets/nmap_2.md'
    alias csnmap3='nano ~/mycode/repos/cheat_sheets/nmap_3.md'
    alias csnmapnse='nano ~/mycode/repos/cheat_sheets/nmap_nse.md'
+   alias csgrep='nano ~/mycode/repos/cheat_sheets/grep.md'
+
   
