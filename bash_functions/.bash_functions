@@ -89,6 +89,17 @@ mybanner() {
   printf "|`tput bold` %-40s `tput sgr0`|\n" "$@"
   echo "+------------------------------------------+"
 }
+# under development
+mybanner1() {
+printf "${LGREEN}"
+printf "=================================\n"
+figlet -f smblock -w 50 -c WP SCANNER           # a method of indenting
+printf "${LYELLOW}"
+figlet -f smblock ${0} | sed 's/^/          /'  # another method of indenting
+printf "${LGREEN}"
+printf "=================================\n"
+printf "${NORMAL}"
+}
 #----------------------------------------------------------------
 # Grep (search) through your history for previous run commands
 function hg() {
@@ -133,7 +144,12 @@ elapsed () {
     printf "\n${CYAN}Finished - Runtime = ${ELAPSED}${NORMAL}\n"
 }
 #----------------------------------------------------------------
-
+# moves deleted files to the waste paper bin (wpb)
+# so deleted files are recouverable if i fuck up
+# syntax is wpb <file name>
+wpb () {
+	mv $1 ~/wpb
+}
 #----------------------------------------------------------------
 
 #----------------------------------------------------------------

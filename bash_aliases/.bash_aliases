@@ -26,7 +26,9 @@
     #alias t='todo'
     alias t="todo"
     alias d='todone'
-
+    alias zr='cd ~/zresults && ll'
+    alias zt='cd ~/ztargets && ll'
+    alias mrs='cd ~/mycode/repos/My_Random_Scripts && ll'
 
 # Reconftw
     alias recon='./reconftw.sh -d $1 -f'
