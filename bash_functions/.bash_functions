@@ -21,7 +21,7 @@ function cuttail() # cut last n lines in file, 10 by default
 #----------------------------------------------------------------
 function _exit()        # function to run upon exit of shell
 {
-    echo -e "${RED}Hasta la vista, baby${NC}"
+    echo -e "${RED}Hasta la vista, baby${NORMAL}"
 }
 trap _exit EXIT
 #----------------------------------------------------------------
