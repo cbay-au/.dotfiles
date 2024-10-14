@@ -136,7 +136,7 @@
     alias recon='cd ~/mycode/reconftw/Recon'
 
 # Cheat Sheets
-   alias csdir='csdirf'		# move to cheat sheet direcotry & print file listing
+   alias csdir='cd ~/mycode/repos/cheat_sheets && ll'		# move to cheat sheet direcotry & print file listing
    alias csnew='nano ~/mycode/repos/cheat_sheets/${1}'			# add a cs file name.md as a parameter to the alias
    alias cstmux='nano ~/mycode/repos/cheat_sheets/tmux.md'
    alias cstree='nano ~/mycode/repos/cheat_sheets/tree.md'
@@ -157,5 +157,5 @@
    alias csnmap3='nano ~/mycode/repos/cheat_sheets/nmap_3.md'
    alias csnmapnse='nano ~/mycode/repos/cheat_sheets/nmap_nse.md'
    alias csgrep='nano ~/mycode/repos/cheat_sheets/grep.md'
-
+   alias cscleanup='nano ~/mycode/repos/cheat_sheets/cscleanup.md'
   
