@@ -158,4 +158,5 @@
    alias csnmapnse='nano ~/mycode/repos/cheat_sheets/nmap_nse.md'
    alias csgrep='nano ~/mycode/repos/cheat_sheets/grep.md'
    alias cscleanup='nano ~/mycode/repos/cheat_sheets/cscleanup.md'
+   alias csnano='nano ~/mycode/repos/cheat_sheets/csnano.md'
   
