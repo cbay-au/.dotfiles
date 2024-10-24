@@ -151,10 +151,110 @@ wpb () {
 	mv $1 ~/wpb
 }
 #----------------------------------------------------------------
+wpcleanup() {   # in development
+
+   printf "\n\n${BLUE}=======================================================================\n"
+   printf "${RED} ** Clean up of a word press mass scan **\n"
+   printf "\nThis function removes all 'Scan Aborted' results & their associated lines from\n"
+   printf "results of a WPScan mass scan. Also removes the end of line & line feed symbols\n"
+   printf "${BLUE}=======================================================================${NORMAL}\n\n\n\n"
+   read -p $'${RED} Enter file path to input file: ${NORMAL}' input_filename
+   read -p $'${RED} Enter file path to output file: ${NORMAL}' output_filename
+
+
+awk '/Scan Aborted/ {print NR-2 "," NR+2 "d"}' ${input_filename} | sed -f - ${input_filename} | sed -e 's/\x1b\[[0-9;]*m//g' > ${output_filename}
+
+in=$(grep -c "TARGET NAME" ${input_filename})
+out=$(grep -c "TARGET NAME" ${output_filename})
+
+printf "\n ${LGREEN}Before the clean up Target Names:${in}\n"
+printf "\n After the clean up Target Names:${out}${NORMAL}\n"
+
+}
+
+#----------------------------------------------------------------
+wpoverview() {
+# Themes
+cat <file name>| sed 's/href=/\n/g' | sed 's/src=/\n/g' | grep 'themes' | cut -d"'" -f2| sort | uniq
+# WP Version
+cat wpscan_uv-wp_websites.csv-aa_1.1_part.1-2 | grep 'WordPress version [0-9]'
+# WP  Plugins
+cat <file name>| sed 's/href=/\n/g' | sed 's/src=/\n/g' | grep 'wp-content/plugins/*' | cut -d"'" -f2
+
+}
+#----------------------------------------------------------------
+
+
+
+#----------------------------------------------------------------
+wpfind() {
+    echo "Searches for matches for arguments given"
+    echo "Outputs frm target name to search argument"
+    echo "Terminates after finding the first match"
+	echo "USAGE: wpfind <search term " 
+if [ $# != 1 ]; then 
+	echo "Incorrect number of arguments !" >&2 
+fi 
+
+printf "\n\n${LGREEN}=======================================================================${NORMAL}\n"
+cat output_filename | sed -n "/TARGET NAME/,/$1/{p; /$1/q}"
+
+}
+
+
+#----------------------------------------------------------------
+wpfind1(){
+# This serches for the arguement given ($1). 
+# When it finds it it prints the full recoerd of the found target
+
+ printf "\n\n${LGREEN}=======================================================================${NORMAL}\n"
+cat output_filename | sed "/.*$1.*\n/p;//g;/TARGET/,/Elapsed/H;//x;D"
+}
+
+
+
+#----------------------------------------------------------------
+diruse() {
+if [ $# != 2 ]; then 
+	echo "Incorrect number of arguments !" >&2
+	echo "USAGE: first argument start dir name second no of dir iin output" 
+fi
+du -h --max-depth=1 $1 2> /dev/null | sort -hr | tail -n +2 | head -$2
+}
+
+#----------------------------------------------------------------
+scanaborted() {
+# ref :- https://askubuntu.com/questions/1034562/grep-to-return-nth-and-mth-lines-before-and-after-the-match
+
+ printf "\n\n${BLUE}=======================================================================\n"
+   printf "${RED}  **  Produces a files of targets which have "ABORTED" in WP Mass Scan  **\n"
+   printf "\n       The input files should be from the cleanup1 function\n"
+   printf "       Cleans up file so can be used as input for another scan\n"
+   printf "       Output file same as input file.aborted\n"
+   printf "${BLUE}=======================================================================${NORMAL}\n\n\n\n"
+   read -p "${LGREEN} Enter file path to input file: ${NORMAL}" input_filename
+
+
+if [ $# != 1 ]; then
+    echo "Incorrect number of arguments !" >&2
+fi
+
+awk '/Scan Aborted/{system("sed -n \"" NR-2 "p\" " FILENAME)}' $1 | cut -d " " -f 3 > $1.aborted
+# Looks for the string Scan Aborted and prints two lines above which incude the 
+# target name including the string TARGET NAME
+# the cut strips of TARGET NAMR leaving the  url only
+
+#awk '/Scan Aborted/{system("sed -n \"" NR-2 "p\" " FILENAME)}' input_filename > deleteop
+
+
+}
 
 #----------------------------------------------------------------
 
 #----------------------------------------------------------------
+
+#----------------------------------------------------------------
+
 
 #----------------------------------------------------------------
 testfunend() {
