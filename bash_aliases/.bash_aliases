@@ -88,9 +88,11 @@
 # List commands
     alias l="ls"
     alias l='ls -lAh'
-    alias ls="ls --color -F"
+    #alias ls="ls --color -F"
     alias la="ls -a"
     alias ll='ls -la'
+    alias ls='lsd'
+    alias lt='ls --tree'
 
 # Ping Commands
     alias pg="ping google.com -c 5"
