@@ -23,13 +23,12 @@
     alias srr='. ~/.bashrc'  		 # source .bashrc
     alias srrf='. ~/.bash_functions && testfun && testfunend'
     alias srra='. ~/.bash_aliases'
-    #alias t='todo'
-    alias t="todo"
-    alias d='todone'
     alias zr='cd ~/zresults && ll'
     alias zt='cd ~/ztargets && ll'
     alias mrs='cd ~/mycode/repos/My_Random_Scripts && ll'
     alias cc='find /tmp/wpscan/cache -mtime +1 -exec rm -r {} \;' # deletes contents of wpscan cache up to 1 day old
+	alias lsd='lsd -la'
+    
 
 # Reconftw
     alias recon='./reconftw.sh -d $1 -f'
