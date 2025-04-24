@@ -25,7 +25,7 @@
     alias srra='. ~/.bash_aliases'
     alias zr='cd ~/zresults && ll'
     alias zt='cd ~/ztargets && ll'
-    alias mrs='cd ~/mycode/repos/My_Random_Scripts && ll'
+    alias mrs='cd ~/mycode/repos/my_random_scripts && ll'
     alias cc='find /tmp/wpscan/cache -mtime +1 -exec rm -r {} \;' # deletes contents of wpscan cache up to 1 day old
 	alias lsd='lsd -la'
     
@@ -41,13 +41,13 @@
     alias containerrm='docker rm -f $(docker ps -aq)'				       # del all containers
     
 # VPN - used when using nordvpn - needs uncommenting
-    #alias vpns='nordvpn status'
-    #alias vpnset='nordvpn settings'
-    #alias vpnc='nordvpn connect Sweden'
-    #alias vpndc='nordvpn connect Double_VPN'
-    #alias vpno='s obfuscate on'
-    #alias vpnuk='nordvpn c 2195'
-    #alias vpnhk='nordvpn connect Hong_Kong'
+    alias vpns='nordvpn status'
+    alias vpnset='nordvpn settings'
+    alias vpnc='nordvpn connect Sweden'
+    alias vpndc='nordvpn connect Double_VPN'
+    alias vpno='s obfuscate on'
+    alias vpnuk='nordvpn c 2195'
+    alias vpnhk='nordvpn connect Hong_Kong'
 
 # fast back cd
     alias ..='cd ..'
