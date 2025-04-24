@@ -55,6 +55,7 @@ gsyncf() {
    cd ~/mycode/repos/.dotfiles
    git add -A ; git commit -m "changes from $(uname -n) on $(date)" ; git push
    sleep 5
+   printf "\n\n${RED}===sync dockerfiles===${NORMAL}\n"
    cd ~/dockerfiles
    git add -A ; git commit -m "changes from $(uname -n) on $(date)" ; git push
    printf "\n\n${RED}===sync DigitalOcean_Droplet_Setup===${NORMAL}\n"
