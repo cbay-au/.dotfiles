@@ -37,6 +37,8 @@
     alias df='docker-compose'
     alias deb_1='docker run -it -d --name leigh_debian_v0 leigh_debian:v0 /bin/bash'   # load custom debian image
     alias deb_2='docker exec -it leigh_debian_v0 /bin/bash'                            # run custom debian image
+    alias imagesrm='docker rmi -f $(docker images -a -q)'			       # del all running images
+    alias containerrm='docker rm -f $(docker ps -aq)'				       # del all containers
     
 # VPN - used when using nordvpn - needs uncommenting
     #alias vpns='nordvpn status'
