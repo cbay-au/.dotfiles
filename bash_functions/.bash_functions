@@ -260,7 +260,23 @@ cd ~/Downloads/squashfs-root
 }
 
 #----------------------------------------------------------------
+nvpnd() {
+    # Check if TOKEN is set
+    if [ -z "$NORDVPN_TOKEN" ]; then
+        echo "NORDVPN_TOKEN environment variable is not set."
+        return 1
+    fi
 
+    # Run the Docker container with necessary options and pass the token
+    docker run -it --hostname nvpn --cap-add=NET_ADMIN --sysctl net.ipv6.conf.all.disable_ipv6=0 \
+        -e TOKEN="$NORDVPN_TOKEN" \
+        --name nvpn_container \
+        nvpn 
+    # Optionally, remove the container after use
+    # docker rm -f nvpn_container
+    # original run command sudo docker run -it --hostname nvpn --cap-add=NET_ADMIN --sysctl net.ipv6.conf.all.disable_ipv6=0 nvpn
+
+}
 #----------------------------------------------------------------
 
 
