@@ -19,7 +19,7 @@ function cuttail() # cut last n lines in file, 10 by default
     sed -n -e :a -e "1,${nlines}!{P;N;D;};N;ba" $1
 }
 #----------------------------------------------------------------
-function _exit()        # function to run upon exit of shell
+exit()        # function to run upon exit of shell
 {
     echo -e "${RED}Hasta la vista, baby${NORMAL}"
 }
@@ -260,6 +260,7 @@ cd ~/Downloads/squashfs-root
 }
 
 #----------------------------------------------------------------
+# To run Nordvpn inside a docker container
 nvpnd() {
     # Check if TOKEN is set
     if [ -z "$NORDVPN_TOKEN" ]; then
@@ -268,15 +269,57 @@ nvpnd() {
     fi
 
     # Run the Docker container with necessary options and pass the token
-    docker run -it --hostname nvpn --cap-add=NET_ADMIN --sysctl net.ipv6.conf.all.disable_ipv6=0 \
-        -e TOKEN="$NORDVPN_TOKEN" \
-        --name nvpn_container \
-        nvpn 
+
+docker run \
+  -it \
+  --hostname nvpn \
+  -v /home/leigh/.env:/.env \
+  --cap-add=NET_ADMIN \
+  --sysctl net.ipv6.conf.all.disable_ipv6=0 \
+  nvpn
+
+
+
+
+
     # Optionally, remove the container after use
     # docker rm -f nvpn_container
     # original run command sudo docker run -it --hostname nvpn --cap-add=NET_ADMIN --sysctl net.ipv6.conf.all.disable_ipv6=0 nvpn
 
 }
+#----------------------------------------------------------------
+
+ollama() {
+docker run -d \
+--name ollama \
+--gpus all \
+-v /mnt/y/ollama/config:/root/.config/ollama \
+-v /mnt/y/ollama:/root/.ollama \
+-p 11434:11434 \
+ ollama/ollama
+}
+
+#----------------------------------------------------------------
+#Run ReconFTW inside a docker container
+reconftw_old () {
+docker run -it --rm \
+-v "${PWD}/OutputFolder/":'/reconftw/Recon/' \
+-v /home/leigh/.env:/.env \
+--name reconftw_c \
+#six2dez/reconftw:main -d cbay.au -r
+reconftw -d cbay.au -r
+}
+
+reconftw() {
+docker run \
+-v $PWD/reconftw.cfg:/root/Tools/reconftw/reconftw.cfg \ 
+-v $PWD/Recon/:/root/Tools/reconftw/Recon/ \
+--name reconftw_c \
+--rm reconftw -d cbay.au -r
+
+}
+#----------------------------------------------------------------
+
 #----------------------------------------------------------------
 
 

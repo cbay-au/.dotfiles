@@ -32,7 +32,18 @@
 
 # Reconftw
     alias recon='./reconftw.sh -d $1 -f'
+    alias recon_env='docker exec -it reconftw_c bash && . .env && exit'
+    alias recon_build=' docker build -t reconftw /root/dockerfiles/reconftw/Docker/
     
+# Ollama
+#   The following models have been downloaded    
+#   To initiate ollama in docker is a function 
+    alias gemma='docker exec -it ollama ollama run gemma3:27b'
+    alias qwen2='docker exec -it ollama ollama run qwen2.5-coder:32b'    
+    alias qwen3='docker exec -it ollama ollama run qwen3:32b'
+    alias olist='docker exec -it ollama bash && ollama list'
+    alias ostats='docker stats ollama'		 # shows container CPU, memory, and GPU usage
+
 # Docker
     alias df='docker-compose'
     alias deb_1='docker run -it -d --name leigh_debian_v0 leigh_debian:v0 /bin/bash'   # load custom debian image
@@ -136,8 +147,6 @@
     alias snms='service network-manager start'
     alias snms1='systemctl restart NetworkManager'
 
-# ReconFTW
-    alias recon='cd ~/mycode/reconftw/Recon'
 
 # Cheat Sheets
    alias csdir='cd ~/mycode/repos/cheat_sheets && ll'		# move to cheat sheet direcotry & print file listing
