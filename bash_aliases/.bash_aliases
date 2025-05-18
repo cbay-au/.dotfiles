@@ -27,13 +27,23 @@
     alias zt='cd ~/ztargets && ll'
     alias mrs='cd ~/mycode/repos/my_random_scripts && ll'
     alias cc='find /tmp/wpscan/cache -mtime +1 -exec rm -r {} \;' # deletes contents of wpscan cache up to 1 day old
-	alias lsd='lsd -la'
-    
+    alias lsd='lsd -la'
+    # Linux version of OSX pbcopy and pbpaste.
+    alias pbcopy1=’xsel — clipboard — input’
+    alias pbpaste1=’xsel — clipboard — output’     
+    alias pbcopy="xclip -selection clipboard"
+    alias pbpaste="xclip -selection clipboard -o"
+
+
 
 # Reconftw
     alias recon='./reconftw.sh -d $1 -f'
     alias recon_env='docker exec -it reconftw_c bash && . .env && exit'
+
     alias recon_build=' docker build -t reconftw /root/dockerfiles/reconftw/Docker/
+#    The following will run the image to create a container with shell access. Need to source .env file.     
+    alias recon_run_OLD='docker run -it -v "${PWD}/OutputFolder/":"/reconftw/Recon/" -v /home/leigh/.env:/\.env --name reconftw_c --entrypoint /bin/bash reconftw'
+    alias recon_run='docker run -it -v "/home/leigh/OutputFolder/":"/reconftw/Recon/" -v "/home/leigh/.env":"/root/.env" --name reconftw_c --entrypoint /bin/bash reconftw'
     
 # Ollama
 #   The following models have been downloaded    
@@ -43,6 +53,7 @@
     alias qwen3='docker exec -it ollama ollama run qwen3:32b'
     alias olist='docker exec -it ollama bash && ollama list'
     alias ostats='docker stats ollama'		 # shows container CPU, memory, and GPU usage
+    alias qwen3u='docker exec -it ollama ollama run hf.co/mradermacher/Qwen3-32B-Uncensored-i1-GGUF'
 
 # Docker
     alias df='docker-compose'
@@ -61,10 +72,9 @@
     alias vpnhk='nordvpn connect Hong_Kong'
 
 # fast back cd
-    alias ..='cd ..'
-    alias ...='cd ../../'
-    alias ....='cd ~'
-    alias ..ll='cd ../ && ll'
+    alias ..='cd .. && lsd'
+    alias ...='cd ../../ && lsd'
+    alias ....='cd ~ && lsd'
 
 # show pathes
     alias path='echo -e ${PATH//:/\\n}'
