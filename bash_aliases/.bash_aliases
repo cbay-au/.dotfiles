@@ -72,9 +72,9 @@
     alias vpnhk='nordvpn connect Hong_Kong'
 
 # fast back cd
-    alias ..='cd .. && lsd'
-    alias ...='cd ../../ && lsd'
-    alias ....='cd ~ && lsd'
+#    alias ..='cd .. && lsd'
+ #   alias ...='cd ../../ && lsd'
+  #  alias ....='cd ~ && lsd'
 
 # show pathes
     alias path='echo -e ${PATH//:/\\n}'
