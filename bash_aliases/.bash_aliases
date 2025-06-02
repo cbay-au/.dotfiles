@@ -51,6 +51,7 @@
     alias gemma='docker exec -it ollama ollama run gemma3:27b'
     alias qwen2='docker exec -it ollama ollama run qwen2.5-coder:32b'    
     alias qwen3='docker exec -it ollama ollama run qwen3:32b'
+    alias devstral='docker exec -it ollama ollama run devstral'
     alias olist='docker exec -it ollama bash && ollama list'
     alias ostats='docker stats ollama'		 # shows container CPU, memory, and GPU usage
     alias qwen3u='docker exec -it ollama ollama run hf.co/mradermacher/Qwen3-32B-Uncensored-i1-GGUF'
@@ -182,4 +183,5 @@
    alias csgrep='nano ~/mycode/repos/cheat_sheets/grep.md'
    alias cscleanup='nano ~/mycode/repos/cheat_sheets/cscleanup.md'
    alias csnano='nano ~/mycode/repos/cheat_sheets/csnano.md'
+   alias csmd='cat ${HOME}/mycode/repos/cheat_sheets/markdown.md'
   
